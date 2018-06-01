@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Footer from './tyfooter.js';
 import './App.css';
+
+const title = 'React Todo';
+const explain = 'A simple react project exercise'
+const nowYear = 2018
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">{title}</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Footer explain={explain} nowYear={nowYear}/>
       </div>
     );
   }
