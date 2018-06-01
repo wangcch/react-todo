@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Footer from './tyfooter.js';
+import Todo from './todo.js';
 import './App.css';
 
 const title = 'React Todo';
@@ -13,6 +14,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">{title}</h1>
         </header>
+        <Todo/>
         <Footer explain={explain} nowYear={nowYear}/>
       </div>
     );
