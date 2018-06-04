@@ -3,9 +3,10 @@ import './todo.css';
 
 class TodoItem extends Component {
   render() {
+    const {data} = this.props;
     return (
       <div className="todo-item">
-        todo
+        {data}
       </div>
     );
   }

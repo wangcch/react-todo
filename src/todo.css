@@ -8,7 +8,8 @@
 .todo-item {
   padding: 16px 12px;
   border-radius: 3px;
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f5f5f5;
   margin-top: 10px;
 }
 
@@ -18,16 +19,16 @@
 
 .inputBox {
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .todo-input {
   outline: none;
-  border: none;
   font-size: 16px;
-  box-sizing: border-box;
   width: 100%;
   color: #222222;
   font-weight: 300;
+  box-sizing: border-box;
 }
 
 .todo-input::placeholder {
