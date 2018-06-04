@@ -17,6 +17,25 @@
   margin-top: 0;
 }
 
+.todo-item_panel {
+  display: flex;
+  align-items: center;
+}
+
+.todo-item_panel .check {
+  margin-right: 10px;
+}
+.todo-item_panel .text {
+  flex: 1;
+  margin: 0;
+}
+.todo-item_panel .btn_del {
+  width: 30px;
+  text-align: right;
+  color: #888888;
+  cursor: pointer;
+}
+
 .inputBox {
   width: 100%;
   margin-bottom: 10px;
