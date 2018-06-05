@@ -24,6 +24,7 @@
 
 .todo-item_panel .check {
   margin-right: 10px;
+  cursor: pointer;
 }
 .todo-item_panel .text {
   flex: 1;
