@@ -29,6 +29,10 @@
   flex: 1;
   margin: 0;
 }
+.todo-item_panel .text.done {
+  text-decoration:line-through;
+  color: #aaaaaa;
+}
 .todo-item_panel .btn_del {
   width: 30px;
   text-align: right;
