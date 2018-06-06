@@ -33,12 +33,19 @@
 .todo-item_panel .text.done {
   text-decoration:line-through;
   color: #aaaaaa;
+
 }
 .todo-item_panel .btn_del {
   width: 30px;
   text-align: right;
   color: #888888;
   cursor: pointer;
+  display: none;
+  color: #F56C6C;
+}
+
+.todo-item:hover .btn_del {
+  display: block;
 }
 
 .inputBox {

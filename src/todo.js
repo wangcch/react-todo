@@ -43,14 +43,14 @@ class Todo extends Component {
   }
 
   delItem = (index) => {
-    console.log('del: ' + index)
+    // console.log('del: ' + index)
     let list = this.state.todoLists;
     list.splice(index, 1);
     this.setState({ list });
   }
 
   toggleSelect = (index) => {
-    console.log('done: ' + index);
+    // console.log('done: ' + index);
     let list = this.state.todoLists;
     list[index].done = !this.state.todoLists[index].done;
     this.setState({ list });
