@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TodoItem from './todoItem.js';
+import TodoFilter from './todoFilter.js';
 import './todo.css';
 
 class Todo extends Component {
@@ -7,12 +8,20 @@ class Todo extends Component {
     super(props);
 
     this.state = {
-      todoLists: [{
-        id: 0,
-        text: 'demo01',
-        done: true,
-        date: ''
-      }]
+      todoLists: [
+        {
+          id: 0,
+          text: 'Todo',
+          done: false,
+          date: ''
+        }, {
+          id: 0,
+          text: 'Done',
+          done: true,
+          date: ''
+        }
+      ],
+      filter: 'all'
     }
   }
 
@@ -36,7 +45,7 @@ class Todo extends Component {
         item.date = date;
         list.push(item)
         list = list.sort(this._listSort);
-        this.setState({ list });
+        this.setState({ todoLists: list });
         e.target.value = '';
       }
     }
@@ -46,14 +55,19 @@ class Todo extends Component {
     // console.log('del: ' + index)
     let list = this.state.todoLists;
     list.splice(index, 1);
-    this.setState({ list });
+    this.setState({ todoLists: list });
   }
 
   toggleSelect = (index) => {
     // console.log('done: ' + index);
     let list = this.state.todoLists;
     list[index].done = !this.state.todoLists[index].done;
-    this.setState({ list });
+    this.setState({ todoLists: list });
+  }
+
+  filterChange = (item) => {
+    console.log(item)
+    this.setState({ filter: item });
   }
 
   render() {
@@ -68,11 +82,14 @@ class Todo extends Component {
       );
     }
 
+    const filterLIst = ['all', 'active', 'completed']
+
     return (
       <div className="todo">
         <div className="inputBox">
           <input className="todo-input todo-item" placeholder="Add Todo" autoFocus onKeyPress={this.inputEnter}/>
         </div>
+        <TodoFilter data={filterLIst} onSelect={this.filterChange.bind(this)} active={this.state.filter}/>
         <TodoList list={this.state.todoLists}/>
       </div>
     );
