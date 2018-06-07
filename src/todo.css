@@ -8,8 +8,8 @@
 .todo-item {
   padding: 16px 12px;
   border-radius: 3px;
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.03);
-  border: 1px solid #f5f5f5;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e8e8e8;
   margin-top: 10px;
 }
 
@@ -82,16 +82,16 @@
 .todo-filter .li .radio-name {
   padding: 2px 10px;
   font-size: 12px;
-  color: #C0C4CC;
+  color: #909399;
   font-weight: bold;
   cursor: pointer;
   text-transform: capitalize;
 }
 
 .todo-filter .li input[type="radio"]:checked+.radio-name {
-  border: 1px solid #f5f5f5;
+  border: 1px solid #e8e8e8;
   border-radius: 3px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.06) inset;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
 }
 
 .todo-input::placeholder {

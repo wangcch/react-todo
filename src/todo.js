@@ -15,7 +15,20 @@ class Todo extends Component {
           done: false,
           date: ''
         }, {
+          id: 1,
+          text: 'Done',
+          done: true,
+          date: ''
+        }
+      ],
+      todoListsSave: [
+        {
           id: 0,
+          text: 'Todo',
+          done: false,
+          date: ''
+        }, {
+          id: 1,
           text: 'Done',
           done: true,
           date: ''
@@ -36,7 +49,7 @@ class Todo extends Component {
   inputEnter = (e) => {
     if (this.isEnter(e.keyCode) || this.isEnter(e.which)) {
       if (e.target.value) {
-        let list = this.state.todoLists;
+        let list = this.state.todoListsSave;
         let item = {};
         const date = new Date()
         item.id = date.getTime();
@@ -45,29 +58,67 @@ class Todo extends Component {
         item.date = date;
         list.push(item)
         list = list.sort(this._listSort);
-        this.setState({ todoLists: list });
+        if (this.state.filter === 'completed') {
+          this.setState({ todoListsSave: list });
+        } else {
+          this.setState({ todoLists: list, todoListsSave: list });
+        }
         e.target.value = '';
       }
     }
   }
 
-  delItem = (index) => {
-    // console.log('del: ' + index)
-    let list = this.state.todoLists;
-    list.splice(index, 1);
-    this.setState({ todoLists: list });
+  _foundIndex = (list, id) => {
+    for (let index in list) {
+      if(list[index].id === id) {
+        return index;
+      }
+    }
+    return null;
   }
-
-  toggleSelect = (index) => {
-    // console.log('done: ' + index);
-    let list = this.state.todoLists;
-    list[index].done = !this.state.todoLists[index].done;
-    this.setState({ todoLists: list });
+  
+  delItem = (id) => {
+    // console.log('del: ' + id)
+    let list1 = this.state.todoLists.concat();
+    let list2 = this.state.todoListsSave.concat();
+    list1.splice(this._foundIndex(list1, id), 1);
+    list2.splice(this._foundIndex(list2, id), 1);
+    this.setState({ todoLists: list1, todoListsSave: list2 });
+  }
+  
+  toggleSelect = (id, done) => {
+    // console.log('done: ' + id);
+    let list1 = this.state.todoLists.concat();
+    let list2 = this.state.todoListsSave.concat();
+    let index1 = parseInt(this._foundIndex(list1, id), 0);
+    let index2 = parseInt(this._foundIndex(list2, id), 0);
+    list1[index1].done = !done;
+    list2[index2].done = !done;
+    this.setState({ todoLists: list1, todoListsSave: list2 });
+    this.filterChange(this.state.filter);
   }
 
   filterChange = (item) => {
     console.log(item)
     this.setState({ filter: item });
+    let list = [];
+    if (item === 'active') {
+      for (item of this.state.todoListsSave) {
+        if (!item.done) {
+          list.push(item)
+        }
+      }
+      this.setState({ todoLists: list });
+    } else if (item === 'completed') {
+      for (item of this.state.todoListsSave) {
+        if (item.done) {
+          list.push(item)
+        }
+      }
+      this.setState({ todoLists: list });
+    } else {
+      this.setState({ todoLists: this.state.todoListsSave });
+    }
   }
 
   render() {
@@ -76,7 +127,7 @@ class Todo extends Component {
       return (
         <div>
           {todoList.map((item, index) =>
-            <TodoItem key={item.text + index} data={item} onDel={this.delItem.bind(this, index)} onSelect={this.toggleSelect.bind(this, index)}/>
+            <TodoItem key={item.text + index} data={item} onDel={this.delItem.bind(this, item.id)} onSelect={this.toggleSelect.bind(this, item.id, item.done)}/>
           )}
         </div>
       );
