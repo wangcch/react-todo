@@ -2,6 +2,8 @@
 
 A simple react project exercise
 
-# LICENSE
+![todo](https://cdn.wangcch.cc/blog/201806111402.png)
+
+# License
 
 MIT
