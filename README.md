@@ -1,8 +1,10 @@
 # React-Todo
 
-A simple react project exercise
+A simple react demo ( todo list )
 
-![todo](https://cdn.wangcch.cc/blog/201806111402.png)
+<p align="center">
+  <img src="https://cdn.wangcch.cc/blog/react_todo.png" width="600">
+</p>
 
 # License
 

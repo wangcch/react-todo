@@ -3,8 +3,7 @@ import Footer from './tyfooter.js';
 import Todo from './todo.js';
 import './App.css';
 
-const explain = 'A simple react project exercise'
-const nowYear = 2018
+const explain = 'A simple react demo'
 
 class App extends Component {
   render() {
@@ -14,7 +13,7 @@ class App extends Component {
           <h1 className="App-title">React <s>&nbsp;Todo&nbsp;</s></h1>
         </header>
         <Todo />
-        <Footer explain={explain} nowYear={nowYear} />
+        <Footer explain={explain} />
       </div>
     );
   }
