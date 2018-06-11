@@ -25,6 +25,30 @@
 .todo-item_panel .check {
   margin-right: 10px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+.todo-item_panel .check .check_dot {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+}
+.todo-item_panel .check input[type="checkbox"]:checked+.check_dot::before {
+  position: absolute;
+  content: '';
+  top: 2px;
+  left: 2px;
+  border-width: 0 0 2px 2px;
+  border-color: #C0C4CC;
+  border-style: solid;
+  border-radius: 0 0 0 3px;
+  width: 16px;
+  height: 6px;
+  transform: rotate(-30deg);
 }
 .todo-item_panel .text {
   flex: 1;
