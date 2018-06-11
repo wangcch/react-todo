@@ -13,8 +13,8 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">React <s>&nbsp;Todo&nbsp;</s></h1>
         </header>
-        <Todo/>
-        <Footer explain={explain} nowYear={nowYear}/>
+        <Todo />
+        <Footer explain={explain} nowYear={nowYear} />
       </div>
     );
   }

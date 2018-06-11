@@ -43,7 +43,7 @@ class Todo extends Component {
   }
 
   isEnter = (code) => {
-    return code === 13? 1 : 0
+    return code === 13 ? 1 : 0
   }
 
   inputEnter = (e) => {
@@ -70,13 +70,13 @@ class Todo extends Component {
 
   _foundIndex = (list, id) => {
     for (let index in list) {
-      if(list[index].id === id) {
+      if (list[index].id === id) {
         return index;
       }
     }
     return null;
   }
-  
+
   delItem = (id) => {
     // console.log('del: ' + id)
     let list1 = this.state.todoLists.concat();
@@ -85,7 +85,7 @@ class Todo extends Component {
     list2.splice(this._foundIndex(list2, id), 1);
     this.setState({ todoLists: list1, todoListsSave: list2 });
   }
-  
+
   toggleSelect = (id, done) => {
     // console.log('done: ' + id);
     let list1 = this.state.todoLists.concat();
@@ -127,7 +127,7 @@ class Todo extends Component {
       return (
         <div>
           {todoList.map((item, index) =>
-            <TodoItem key={item.text + index} data={item} onDel={this.delItem.bind(this, item.id)} onSelect={this.toggleSelect.bind(this, item.id, item.done)}/>
+            <TodoItem key={item.text + index} data={item} onDel={this.delItem.bind(this, item.id)} onSelect={this.toggleSelect.bind(this, item.id, item.done)} />
           )}
         </div>
       );
@@ -138,10 +138,10 @@ class Todo extends Component {
     return (
       <div className="todo">
         <div className="inputBox">
-          <input className="todo-input todo-item" placeholder="Add Todo" autoFocus onKeyPress={this.inputEnter}/>
+          <input className="todo-input todo-item" placeholder="Add Todo" autoFocus onKeyPress={this.inputEnter} />
         </div>
-        <TodoFilter data={filterLIst} onSelect={this.filterChange.bind(this)} active={this.state.filter}/>
-        <TodoList list={this.state.todoLists}/>
+        <TodoFilter data={filterLIst} onSelect={this.filterChange.bind(this)} active={this.state.filter} />
+        <TodoList list={this.state.todoLists} />
       </div>
     );
   }

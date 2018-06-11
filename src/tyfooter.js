@@ -3,7 +3,7 @@ import './tyfooter.css';
 
 class tyFooter extends Component {
   render() {
-    const {explain, nowYear} = this.props;
+    const { explain, nowYear } = this.props;
     return (
       <footer className="footer">
         <p className="explain">{explain}</p>
