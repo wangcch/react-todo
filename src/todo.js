@@ -10,12 +10,12 @@ class Todo extends Component {
     this.state = {
       todoLists: [
         {
-          id: 0,
+          id: 1,
           text: 'Todo',
           done: false,
           date: ''
         }, {
-          id: 1,
+          id: 0,
           text: 'Done',
           done: true,
           date: ''
@@ -23,12 +23,12 @@ class Todo extends Component {
       ],
       todoListsSave: [
         {
-          id: 0,
+          id: 1,
           text: 'Todo',
           done: false,
           date: ''
         }, {
-          id: 1,
+          id: 0,
           text: 'Done',
           done: true,
           date: ''
@@ -57,7 +57,7 @@ class Todo extends Component {
         item.done = false;
         item.date = date;
         list.push(item)
-        list = list.sort(this._listSort);
+        // list = list.sort(this._listSort);
         if (this.state.filter === 'completed') {
           this.setState({ todoListsSave: list });
         } else {
@@ -123,7 +123,8 @@ class Todo extends Component {
 
   render() {
     let TodoList = (props) => {
-      let todoList = props.list;
+      let todoList = props.list.concat();
+      todoList.sort(this._listSort)
       return (
         <div>
           {todoList.map((item, index) =>
