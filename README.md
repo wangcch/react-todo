@@ -3,9 +3,20 @@
 A simple react demo ( todo list )
 
 <p align="center">
-  <img src="https://cdn.wangcch.cc/blog/react_todo.png" width="600">
+  <img src="react_todo.png" width="600">
 </p>
 
-# License
+## Todo
+
+- [x] add
+- [x] delete
+- [x] selected and unselected
+- [x] all/active/completed
+- [ ] edit
+- [ ] cookie
+- [ ] account
+
+
+## License
 
 MIT
