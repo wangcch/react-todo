@@ -13,6 +13,7 @@ A simple react demo ( todo list )
 - [x] selected and unselected
 - [x] all/active/completed
 - [ ] edit
+- [ ] animation
 - [ ] cookie
 - [ ] account
 
