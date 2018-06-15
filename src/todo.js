@@ -134,14 +134,14 @@ class Todo extends Component {
       );
     }
 
-    const filterLIst = ['all', 'active', 'completed']
+    const filterList = ['all', 'active', 'completed']
 
     return (
       <div className="todo">
         <div className="inputBox">
           <input className="todo-input todo-item" placeholder="Add Todo" autoFocus onKeyPress={this.inputEnter} />
         </div>
-        <TodoFilter data={filterLIst} onSelect={this.filterChange.bind(this)} active={this.state.filter} />
+        <TodoFilter data={filterList} onSelect={this.filterChange.bind(this)} active={this.state.filter} total={this.state.todoListsSave.length} />
         <TodoList list={this.state.todoLists} />
       </div>
     );
