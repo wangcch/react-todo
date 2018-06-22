@@ -8,12 +8,13 @@ A simple react demo ( todo list )
 
 ## Todo
 
-- [x] add
-- [x] delete
-- [x] selected and unselected
-- [x] all/active/completed
-- [x] edit
+- [x] ~~add~~
+- [x] ~~delete~~
+- [x] ~~selected and unselected~~
+- [x] ~~all/active/completed~~
+- [x] ~~edit~~
 - [ ] animation
+- [ ] better mobile
 - [ ] cookie
 - [ ] account
 
