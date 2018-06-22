@@ -88,6 +88,17 @@ class Todo extends Component {
     this.setState({ todoLists: list1, todoListsSave: list2 });
   };
 
+  editItem = (id, value) => {
+    // console.log(id, value);
+    let list1 = this.state.todoLists.concat();
+    let list2 = this.state.todoListsSave.concat();
+    let index1 = parseInt(this._foundIndex(list1, id), 0);
+    let index2 = parseInt(this._foundIndex(list2, id), 0);
+    list1[index1].text = value;
+    list2[index2].text = value;
+    this.setState({ todoLists: list1, todoListsSave: list2 });
+  }
+
   toggleSelect = (id, done) => {
     // console.log('done: ' + id);
     let list1 = this.state.todoLists.concat();
@@ -135,6 +146,7 @@ class Todo extends Component {
               data={item}
               onDel={this.delItem.bind(this, item.id)}
               onSelect={this.toggleSelect.bind(this, item.id, item.done)}
+              onEdit={this.editItem.bind(this, item.id)}
             />
           ))}
         </div>

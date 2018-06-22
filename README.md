@@ -12,7 +12,7 @@ A simple react demo ( todo list )
 - [x] delete
 - [x] selected and unselected
 - [x] all/active/completed
-- [ ] edit
+- [x] edit
 - [ ] animation
 - [ ] cookie
 - [ ] account

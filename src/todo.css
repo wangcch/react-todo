@@ -11,6 +11,7 @@
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
   border: 1px solid #e8e8e8;
   margin-top: 10px;
+  box-sizing: border-box;
 }
 
 .todo-item:first-child {
@@ -20,6 +21,8 @@
 .todo-item_panel {
   display: flex;
   align-items: center;
+  padding: 0 22px;
+  height: 52px;
 }
 
 .todo-item_panel .check {
@@ -53,14 +56,32 @@
   transform: rotate(-30deg);
 }
 
-.todo-item_panel .text {
+.todo-item_panel .text-box {
   flex: 1;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.todo-item_panel .text {
   margin: 0;
 }
 
 .todo-item_panel .text.done {
   text-decoration: line-through;
   color: #aaaaaa;
+}
+
+.todo-item_panel .text-box .text_edit {
+  width: 100%;
+  padding: 5px 0;
+  font-size: inherit;
+  font-weight: 300;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  outline: none;
 }
 
 .todo-item_panel .btn_del {
