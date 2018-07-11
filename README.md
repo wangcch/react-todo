@@ -15,7 +15,7 @@ A simple react demo ( todo list )
 - [x] ~~edit~~
 - [ ] animation
 - [ ] better mobile
-- [ ] LocalStorage
+- [x] LocalStorage
 - [ ] account
 
 
