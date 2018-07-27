@@ -160,9 +160,9 @@ class Todo extends Component {
             <TodoItem
               key={item.text + index}
               data={item}
-              onDel={this.delItem.bind(this, item.id)}
-              onSelect={this.toggleSelect.bind(this, item.id, item.done)}
-              onEdit={this.editItem.bind(this, item.id)}
+              onDel={() => this.delItem(item.id)}
+              onSelect={() => this.toggleSelect(item.id, item.done)}
+              onEdit={value => this.editItem(item.id, value)}
             />
           ))}
         </div>
@@ -183,7 +183,7 @@ class Todo extends Component {
         </div>
         <TodoFilter
           data={filterList}
-          onSelect={this.filterChange.bind(this)}
+          onSelect={e => this.filterChange(e)}
           active={this.state.filter}
           total={this.state.originalList.length}
         />
