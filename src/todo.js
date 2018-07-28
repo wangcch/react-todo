@@ -183,7 +183,7 @@ class Todo extends Component {
         </div>
         <TodoFilter
           data={filterList}
-          onSelect={e => this.filterChange(e)}
+          onSelect={value => this.filterChange(value)}
           active={this.state.filter}
           total={this.state.originalList.length}
         />

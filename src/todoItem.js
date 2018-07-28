@@ -25,14 +25,14 @@ class TodoItem extends Component {
   };
 
   render() {
-    const { data } = this.props;
+    const { data, onSelect, onDel } = this.props;
     return (
       <div className="todo-item todo-item_panel">
         <label className="check">
           <input
             type="checkbox"
             className="check_inout"
-            onChange={this.props.onSelect}
+            onChange={onSelect}
             checked={data.done}
             hidden
           />
@@ -56,7 +56,7 @@ class TodoItem extends Component {
             </p>
           )}
         </div>
-        <div className="btn_del" onClick={this.props.onDel}>
+        <div className="btn_del" onClick={onDel}>
           <span>Del</span>
         </div>
       </div>

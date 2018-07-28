@@ -2,12 +2,8 @@ import React, { Component } from "react";
 import "./todo.css";
 
 class TodoFilter extends Component {
-  filterChange = e => {
-    this.props.onSelect(e.target.value);
-  };
-
   render() {
-    let { data, active, total } = this.props;
+    let { data, active, total, onSelect } = this.props;
     return (
       <div className="todo-item todo-filter">
         <div className="li">
@@ -22,7 +18,7 @@ class TodoFilter extends Component {
               value={item}
               hidden
               checked={active === item ? true : false}
-              onChange={this.filterChange}
+              onChange={(e) => onSelect(e.target.value)}
             />
             <span className="radio-name">{item}</span>
           </label>
